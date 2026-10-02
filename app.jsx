@@ -59,9 +59,9 @@ function App() {
             <a href="#proyectos" className="hover:text-primary transition-colors">Proyectos</a>
             <a href="#blog" className="hover:text-primary transition-colors">Blog</a>
             
-            <a href="#cv" className="ml-4 inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary/90 transition-all shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-0.5">
+            <a href="./assets/CV_Yuan_Sen.pdf" target="_blank" rel="noopener noreferrer" className="ml-4 inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-primary/90 transition-all shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-0.5">
               <DownloadIcon />
-              Ver Curriculum
+              Ver Currículum
             </a>
           </nav>
 
@@ -82,7 +82,7 @@ function App() {
             <a href="#habilidades" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Habilidades</a>
             <a href="#proyectos" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Proyectos</a>
             <a href="#blog" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Blog</a>
-            <a href="#cv" className="mt-2 flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-full font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <a href="./assets/CV_Yuan_Sen.pdf" download="CV_Yuan_Sen.pdf" className="mt-2 flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-full font-medium" onClick={() => setMobileMenuOpen(false)}>
               <DownloadIcon />
               Descargar CV
             </a>
@@ -226,24 +226,24 @@ function App() {
           <div className="max-w-[1440px] mx-auto px-3 sm:px-5 md:px-8 lg:px-12">
             <div className="mb-12 max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight mb-4">Blog de Conocimientos</h2>
-              <p className="text-foreground/70 text-lg">Artículos y guías donde documento mi aprendizaje y descubrimientos técnicos.</p>
+              <p className="text-foreground/70 text-lg">Guías oficiales de Figma, MDN y React que utilizo para aprender diseño y desarrollo web.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: 'Cómo estructurar componentes en Figma', date: 'Octubre 2026', read: '5 min' },
-                { title: 'Buenas prácticas de HTML/CSS para principiantes', date: 'Septiembre 2026', read: '7 min' },
-                { title: 'Entendiendo el estado en React (con ejemplos simples)', date: 'Agosto 2026', read: '6 min' }
+                { title: 'Cómo estructurar componentes en Figma', source: 'Figma Learn', language: 'Inglés', url: 'https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma' },
+                { title: 'Conceptos básicos de HTML para principiantes', source: 'MDN Web Docs', language: 'Español', url: 'https://developer.mozilla.org/es/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content' },
+                { title: 'Entendiendo el estado en React (con ejemplos simples)', source: 'React', language: 'Español', url: 'https://es.react.dev/learn/state-a-components-memory' }
               ].map((article, i) => (
-                <a key={i} href="#" className="flex flex-col p-6 bg-background rounded-2xl border border-primary-light/30 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all group">
+                <a key={i} href={article.url} target="_blank" rel="noopener noreferrer" className="flex flex-col p-6 bg-background rounded-2xl border border-primary-light/30 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all group">
                   <div className="text-xs text-foreground/50 font-medium mb-4 flex gap-3">
-                    <span>{article.date}</span>
+                    <span>{article.source}</span>
                     <span>•</span>
-                    <span>{article.read}</span>
+                    <span>{article.language}</span>
                   </div>
                   <h3 className="font-bold text-lg leading-tight mb-4 group-hover:text-primary transition-colors">{article.title}</h3>
                   <div className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-primary">
-                    Leer artículo <ArrowRightIcon />
+                    Leer guía oficial <ExternalLinkIcon />
                   </div>
                 </a>
               ))}
@@ -288,5 +288,6 @@ function App() {
   );
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
 
 
