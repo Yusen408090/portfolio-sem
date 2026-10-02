@@ -53,7 +53,7 @@ function App() {
           </div>
           
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8 items-center text-sm font-medium">
+          <nav className="desktop-navigation gap-8 items-center text-sm font-medium">
             <a href="#sobre-mi" className="hover:text-primary transition-colors">Sobre Mí</a>
             <a href="#habilidades" className="hover:text-primary transition-colors">Habilidades</a>
             <a href="#proyectos" className="hover:text-primary transition-colors">Proyectos</a>
@@ -67,7 +67,7 @@ function App() {
 
           {/* Mobile Nav Toggle */}
           <button 
-            className="md:hidden p-2 -mr-2 text-foreground hover:text-primary transition-colors"
+            className="mobile-navigation-toggle p-2 -mr-2 text-foreground hover:text-primary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Abrir o cerrar menú" aria-expanded={mobileMenuOpen}
           >
@@ -77,7 +77,7 @@ function App() {
 
         {/* Mobile Nav Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-primary-light/30 shadow-lg px-4 py-6 flex flex-col gap-4">
+          <div className="mobile-navigation-panel absolute top-16 left-0 w-full bg-surface border-b border-primary-light/30 shadow-lg px-4 py-6 flex flex-col gap-4">
             <a href="#sobre-mi" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Sobre Mí</a>
             <a href="#habilidades" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Habilidades</a>
             <a href="#proyectos" className="px-4 py-2 font-medium hover:bg-background rounded-lg" onClick={() => setMobileMenuOpen(false)}>Proyectos</a>
@@ -106,6 +106,10 @@ function App() {
                 Especializado en Diseño UI/UX y Desarrollo Frontend. Creo interfaces modernas, prototipos funcionales y experiencias web enfocadas en el usuario.
               </p>
               <div className="flex flex-wrap gap-4 mt-2">
+                <a href="./assets/CV_Yuan_Sen.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-all font-medium">
+                  <DownloadIcon />
+                  Ver Currículum
+                </a>
                 <a href="#proyectos" className="inline-flex items-center gap-2 bg-foreground text-surface px-6 py-3 rounded-full hover:bg-foreground/90 transition-all font-medium">
                   Ver Proyectos
                   <ArrowRightIcon />

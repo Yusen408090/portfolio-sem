@@ -23,6 +23,14 @@
     <style>
       html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
       body { margin: 0; background: #f8fafc; color: #1e293b; }
+      /* Keep critical navigation independent of runtime-generated utilities. */
+      .desktop-navigation { display: flex; }
+      .mobile-navigation-toggle, .mobile-navigation-panel { display: none; }
+      @media (max-width: 767px) {
+        .desktop-navigation { display: none; }
+        .mobile-navigation-toggle { display: inline-flex; }
+        .mobile-navigation-panel { display: flex; }
+      }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
       }
